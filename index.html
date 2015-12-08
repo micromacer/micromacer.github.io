@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>ZEXAL.XYZ</title>
+	<link rel="favicon shortcut icon" href="/favicon.ico">
+	<link rel="apple-touch-icon" href="/favicon.png">
+	<style type="text/css">
+	@import url(http://fonts.useso.com/css?family=Roboto:400,100,300);
+	body {
+		font-family: 'Roboto', Helvetica Neue, Helvetica, Arial, Ubuntu, sans-serif;
+		font-size: 20px;
+		color: #FFF;
+		padding: 0;
+		margin: 0;
+		background: #FFF center scroll no-repeat;
+		background-size: cover;
+		overflow: hidden;
+	}
+	#cont {
+		background: #FFF center scroll no-repeat;
+		background-size: cover;
+		opacity: 0;
+		-webkit-transition: opacity 1200ms ease;
+		-moz-transition: opacity 1200ms ease;
+		transition: opacity 1200ms ease;
+	}
+	#title-12 {
+		position: fixed;
+		top: 50%;
+		left: 0;
+		width: 100%;
+		margin: -190px 0 0 0;
+		opacity: 0;
+		z-index: 100;
+		-webkit-transition: all 1200ms ease;
+		-moz-transition: all 1200ms ease;
+		transition: all 1200ms ease;
+	}
+	h1 {
+		font-size: 3.55em;
+		font-weight: 100;
+		text-align: center;
+		letter-spacing: 2px;
+		margin: 0;
+	}
+	h2 {
+		font-size: 2.27em;
+		font-weight: 100;
+		text-align: center;
+		margin: 0;
+	}
+	h2 span {
+		padding: 0 0.267em;
+	}
+	#main-nav, #main-nav div, #main-nav nav, #main-nav ul, #main-nav li, #main-nav p {
+		box-sizing: border-box;
+		margin: 0;
+	}
+	#main-nav {
+		position: fixed;
+		bottom: -24.35em;
+		left: 0;
+		width: 100%;
+		height: 6.75em;
+		font-weight: 100;
+		background: rgba(238, 238, 238, 0.767);
+		opacity: 0;
+		z-index: 300;
+		-webkit-transition: all 700ms ease;
+		-moz-transition: all 700ms ease;
+		transition: all 700ms ease;
+	}
+	#main-nav ul {
+		display: block;
+		text-align: center;
+		padding: 0;
+		margin: 0;
+	}
+	#main-nav li {
+		display: inline-block;
+		width: 26%;
+		height: 6.75em;
+		color: #444;
+		text-align: center;
+		padding: 2.075em 0;
+		margin: 0;
+	}
+	#main-nav li:hover {
+		color: rgb(238, 238, 238);
+		background: #444;
+	}
+	#main-nav li a {
+		font-size: 2.112em;
+		font-weight: inherit;
+		color: inherit;
+		text-decoration: inherit;
+		cursor: pointer;
+	}
+	#contact-info {
+		position: absolute;
+		width: 100%;
+		height: 22em;
+		color: #444;
+		text-align: center;
+		padding: 30px 0 0 0;
+		background: rgba(238, 238, 238, 0.767);
+	}
+	#contact-info p a {
+		font-size: 1.27em;
+		font-weight: 300;
+		color: #38D;
+		text-decoration: inherit;
+	}
+	footer {
+		position: absolute;
+		left: 0;
+		bottom: 10px;
+		width: 100%;
+		font-weight: 300;
+		text-align: center;
+	}
+	footer a {
+		display: block;
+		font-size: 0.745em;
+		color: #555;
+		text-decoration: none;
+	}
+	footer span {
+		display: block;
+		font-size: 0.595em;
+		color: #777;
+	}
+	.preload {
+		width: 0;
+		height: 0;
+		opacity: 0;
+		overflow: hidden;
+	}
+	</style>
+	<script type="text/javascript">
+	window.contactOnDisplay = false;
+	function showNav() {
+		document.getElementById("main-nav").style.opacity = 1;
+		document.getElementById("main-nav").style.bottom = 0;
+	}
+	function pageDidLoad() {
+		document.getElementById("title-12").style.opacity = 1;
+		document.getElementById("title-12").style.marginTop = "-170px";
+		document.getElementById("cont").style.backgroundImage = "url(bg.jpg)";
+		document.getElementById("cont").style.opacity = 1;
+		setTimeout(showNav, 600);
+	}
+	function bigDidLoad() {
+		document.getElementById("cont").style.backgroundImage = "url(bg2.jpg)";
+	}
+	function displayContact() {
+		var navbar = document.getElementById("main-nav").style;
+		var contactInfo = document.getElementById("contact-info").style;
+		if (window.contactOnDisplay) {
+			navbar.bottom = 0;
+			window.contactOnDisplay = false;
+		} else {
+			navbar.bottom = "22em";
+			window.contactOnDisplay = true;
+		}
+	}
+	</script>
+</head>
+<body onload="pageDidLoad()">
+	<div id="cont">
+		<header id="title-12">
+			<h1>ZEXAL</h1>
+			<h2>ARTWORK BY EKEKE</h1>
+		</header>
+		<div id="main-nav">
+			<ul>
+				<li><a href="http://weibo.com/micromacer">Weibo</a></li>
+				<li><a href="http://www.jianshu.com/users/934a34200706/latest_articles">Jianshu</a></li>
+				<li><a onclick="displayContact()">Contact</a></li>
+			</ul>
+			<div id="contact-info">
+				<p>
+					<a href="mailto:micromacer@outlook.com">Email: micromacer [@] outlook.com</a>
+					<br>
+					<br><a href="mailto:micromacer@me.com">or: micromacer [@] me.com</a>
+				</p>
+				<footer>
+					<a href="">&copy; 2014-2015 ZEXAL Studio,All Rights Reserved.</a>
+					<span>Implemented by Joy Neop.</span>
+				</footer>
+			</div>
+		</div>
+	</div>
+	<div class="preload">
+		<img src="bg.jpg" onload="pageDidLoad()">
+		<img src="bg2.jpg" onload="bigDidLoad()">
+	</div>
+	<script type="text/javascript">
+	document.getElementById("cont").style.height = window.innerHeight + "px";
+	setTimeout(pageDidLoad, 900);
+	</script>
+</body>
+</html>
